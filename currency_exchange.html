@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+</head>
+<body>
+    <h1>Currency Exchange</h1>
+    <p>Exchange rate from  United States Dollar(USD) to Azerbaijan Manat(AZN):<span id="exchangeRate"></span></p>
+    <script>
+        function fetchExchangeRate(){
+            const apiKey="622020a39d12eb23e71755f1"
+            const currencyBase = 'USD';
+            const currencyTarget = 'AZN';
+
+            const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currencyBase}`;
+
+            fetch(apiUrl)
+            .then(Response =>Response.json())
+            .then(data => {
+                
+                const exchangeRate = data.conversion_rates[currencyTarget];
+                console.log(exchangeRate);
+                document.getElementById('exchangeRate').textContent = exchangeRate;
+            })
+            .catch(error =>{
+                console.error('Error fetching exchange rate',error);
+            });
+
+            window.onload = fetchExchangeRate;
+        }
+
+
+        window.onload = fetchExchangeRate;
+    </script>
+</body>
+</html>
