@@ -43,6 +43,6 @@ This web application allows users to quickly and easily convert currency values 
     2. Navigate to the project directory:
 ```sh
 cd currency-conversion-app
-
+```
 
     3.Open the index.html file in your preferred web browser.
