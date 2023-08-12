@@ -38,4 +38,7 @@ This web application allows users to quickly and easily convert currency values 
 
    ```sh
    git clone https://github.com/yourusername/currency-conversion-app.git
-```
+
+
+```sh
+cd currency-conversion-app
