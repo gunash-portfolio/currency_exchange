@@ -43,4 +43,4 @@ This web application allows users to quickly and easily convert currency values 
     ```sh
     cd currency-conversion-app
 
-3.Open the index.html file in your preferred web browser.
+3. Open the `index.html` file in your preferred web browser.
