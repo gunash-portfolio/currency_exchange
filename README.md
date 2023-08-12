@@ -39,6 +39,6 @@ This web application allows users to quickly and easily convert currency values 
    ```sh
    git clone https://github.com/yourusername/currency-conversion-app.git
 
-
+2. Navigate to the project directory:
 ```sh
 cd currency-conversion-app
