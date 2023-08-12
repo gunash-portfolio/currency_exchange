@@ -40,9 +40,10 @@ This web application allows users to quickly and easily convert currency values 
    git clone https://github.com/yourusername/currency-conversion-app.git
    
    
-    2. Navigate to the project directory:
-```sh
-cd currency-conversion-app
-```
 
-    3.Open the index.html file in your preferred web browser.
+
+2. Navigate to the project directory:
+    ```sh
+    cd currency-conversion-app
+
+3.Open the index.html file in your preferred web browser.
