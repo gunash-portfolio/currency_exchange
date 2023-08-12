@@ -5,20 +5,26 @@
 </head>
 <body>
   <h1>Exchange Rate Fetch Example</h1>
-  <label for="usdAmount">Enter USD amount:</label>
-  <input type="number" id="usdAmount" step="0.01" placeholder="Enter amount" />
+  <label for="fromCurrency">From:</label>
+  <select id="fromCurrency">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+  </select>
+
+  <label for="amount">Enter amount:</label>
+  <input type="number" id="amount" step="0.01" placeholder="Enter amount" />
+
   <button onclick="convertCurrency()">Convert to AZN</button>
   <p>Equivalent amount in Azerbaijani Manat (AZN): <span id="aznAmount"></span></p>
 
   <script>
     // Function to fetch exchange rate data from the API
-    function fetchExchangeRate() {
+    function fetchExchangeRate(baseCurrency) {
       // Replace 'YOUR_API_KEY' with your actual API key from ExchangeRate-API
-      const apiKey = '622020a39d12eb23e71755f1';
-      const currencyBase = 'USD'; // Change to USD
+      const apiKey = 'YOUR_API_KEY';
       const currencyTarget = 'AZN';
 
-      const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currencyBase}`;
+      const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
 
       return fetch(apiUrl)
         .then(response => response.json())
@@ -28,18 +34,20 @@
         });
     }
 
-    // Function to convert USD to AZN
+    // Function to convert currency
     function convertCurrency() {
-      const usdAmount = parseFloat(document.getElementById('usdAmount').value);
-      if (isNaN(usdAmount)) {
-        alert('Please enter a valid number for the USD amount.');
+      const fromCurrency = document.getElementById('fromCurrency').value;
+      const amount = parseFloat(document.getElementById('amount').value);
+
+      if (isNaN(amount)) {
+        alert('Please enter a valid number for the amount.');
         return;
       }
 
-      fetchExchangeRate()
+      fetchExchangeRate(fromCurrency)
         .then(exchangeRate => {
           // Calculate the equivalent amount in AZN
-          const aznAmount = usdAmount * exchangeRate;
+          const aznAmount = amount * exchangeRate;
 
           // Update the content of the HTML element with the calculated AZN amount
           document.getElementById('aznAmount').textContent = aznAmount.toFixed(2);
