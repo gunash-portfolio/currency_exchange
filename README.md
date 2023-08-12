@@ -44,3 +44,17 @@ This web application allows users to quickly and easily convert currency values 
     cd currency-conversion-app
 
 3. Open the `index.html` file in your preferred web browser.
+
+### Usage
+1. Open the web application in your browser by launching the `index.html` file.
+2. In the application, choose the source currency from the dropdown menu.
+3. Enter the amount you want to convert in the input field.
+4. Click the "Convert to AZN" button.
+5. The equivalent amount in Azerbaijani Manat (AZN) will be displayed below the button.
+### Contributing
+Contributions to this project are welcome! If you find any issues or have suggestions for improvements, feel free to create a pull request or submit an issue.
+
+### License
+
+This project is licensed under the MIT License.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
