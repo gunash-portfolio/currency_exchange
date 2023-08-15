@@ -33,3 +33,21 @@ button{
     border-radius: 4px;
     cursor: pointer;
 }
+p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 600px) {
+    input[type="number"], select, button {
+      width: 100%;
+    }
+  }
